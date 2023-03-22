@@ -1,0 +1,68 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Handling events</title>
+</head>
+
+<body>
+    <h1 class="text-center">Addition & Substraction of 2 Numbers</h1>
+
+    <div id="he"></div>
+
+    <script type="text/babel">
+
+        const App =()=> {
+            let data={}
+            const [add,setSum]=React.useState(0)
+            const fnChange=(e)=>
+            {
+               data[e.target.id]=e.target.value 
+               console.log('id',e.target.id) 
+               console.log('val',e.target.value) 
+            }
+            const fnAdd=()=>
+            {
+                let sum=Number(data.n1)+Number(data.n2)
+                console.log('sum',sum)
+                setSum(sum)
+            }
+            // const fnChange2=(e)=>
+            // {
+            //    data.n2=e.target.value 
+            //    console.log('n2=',data.n2) 
+            // }
+
+            return <div class="container col-4">
+                <div class="form-group">
+                    <label>Number 1 :</label>
+                    <input type="number" id="n1" class="form-control" onChange={fnChange}/>
+                </div>
+                <div class="form-group">
+                    <label>Number 2 :</label>
+                    <input type="number" id="n2" onChange={fnChange} class="form-control"/>
+                </div>
+                <button type="submit" onClick={fnAdd} class="btn btn-primary">Calculate</button>
+
+                <p>Addition : <span>{add}</span></p>
+
+                
+        
+            </div>
+        }
+
+
+        var instance = ReactDOM.createRoot(document.querySelector('#he'))
+        instance.render(<App />)
+    </script>

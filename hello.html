@@ -1,0 +1,19 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="hw"></div>
+
+<script type="text/babel">
+    function Hello(){
+        return <h1>Hello World...!!</h1>
+    }
+
+    function App()
+    {
+        return <Hello/>
+    }
+
+    var ref=ReactDOM.createRoot(document.querySelector('#hw'))
+    ref.render(<App/>)
+</script>

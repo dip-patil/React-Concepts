@@ -1,0 +1,136 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="cb"></div>
+<style>
+.WhiteBox{
+    height: 80;
+    width: 80;
+    
+    background-color: white;
+    display:inline-block;
+
+}
+.BlackBox{
+    height: 80;
+    width: 80;
+   
+    background-color: black;
+    display:inline-block;
+
+}
+.CheseBox{
+    height: 640;
+    width: 640;
+    border:8px solid rgb(72, 155, 237);
+    display:inline-block;
+}
+
+</style>
+<script type="text/babel">
+    function WhiteBox(){
+        return <div class="WhiteBox"></div> 
+    }
+    function BlackBox(){
+        return <div class="BlackBox"></div> 
+    }
+    function CheseBox()
+    {
+        return <div class="CheseBox">
+                  <div>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                  </div>
+                  <div>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    
+                    <WhiteBox/>
+                  </div>
+                  <div>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                  </div>
+                  <div>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    
+                    <WhiteBox/>
+                  </div>
+                  <div>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                  </div>
+                  <div>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    
+                    <WhiteBox/>
+                  </div>
+                  <div>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                  </div>
+                  <div>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    <WhiteBox/>
+                    <BlackBox/>
+                    
+                    <WhiteBox/>
+                  </div>
+               </div>
+    }
+
+    function App(){
+        return <div>
+                       <CheseBox/>
+             </div> 
+    }
+    var ref=ReactDOM.createRoot(document.querySelector('#cb'))
+    ref.render(<App/>)
+
+</script>

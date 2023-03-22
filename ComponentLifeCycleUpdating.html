@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating </title>
+        <script src="react.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script src="react-dom.development.js"></script>
+</head>
+<body>
+    <div class="root"> </div>
+
+<script type="text/babel">
+   
+    const App=()=>
+    {
+        const[name,setName]=React.useState('Dip')
+        const fnUpdate=()=>
+        {
+            setName('Nitin')
+        }
+
+        React.useEffect(()=>
+        {
+            console.log('Mounting...!!')
+            
+        },[])
+
+        React.useEffect(()=>
+        {
+            
+            
+            if(name!='Dip')
+            {   debugger
+                console.log('Updated')
+            }
+        },[name])
+        
+        
+        
+        debugger;
+        console.log('Before Updating...!!')
+        return <div>
+                    <h2>Student : {name}</h2>
+                    <button onClick={fnUpdate}>Update</button>
+                </div>
+    }
+    var data=ReactDOM.createRoot(document.querySelector('.root'))
+    data.render(<App/>)
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.min.js"></script>
+
+<div id="p2c"></div>
+
+<script type="text/babel">
+ const Child1=(x)=>
+ {
+    const name='Dip'
+    x.fn(name)
+    return <h2>child1 :</h2>
+ }
+
+ const Child2=(data)=>
+ {
+    return <h2>Child2 : {data.fn}</h2>
+ }
+ 
+ const App=()=>
+ {
+    const[name,setName]=React.useState('')
+    const fnName=(name)=>
+    {
+        setName(name)
+    }
+    return <div>
+            <h1>App :</h1>
+            <Child1 fn={fnName}/>
+            <Child2 fn={name}/>
+        </div>
+ }
+
+
+var instance=ReactDOM.createRoot(document.getElementById('p2c'))
+instance.render(<App/>)
+
+</script>

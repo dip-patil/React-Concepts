@@ -1,0 +1,100 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+
+<div id="tbl"></div>
+
+<script type="text/babel">
+   
+    const Table=(obj)=>
+    {
+    const [obj1,setObj1]=React.useState(0)
+    const fnView=(obj)=>
+    {
+        setObj1(obj)
+
+    }
+    const{heading,data,colId}=obj
+       return <div>
+       <table border='4px'>
+                <thead>
+                    <tr>
+                        {
+                         
+                        heading.map((val,index)=>{
+                            return <th>{val}</th>
+                        })
+                        }
+                        <th>Action</th>   
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    
+                    {
+
+                        data.map((val, index) => {
+                            return <tr> 
+                                {   
+                                    colId.map((v, index) => {
+                                    return <td>{val[v]}</td>
+                                            
+                                    })
+                                    
+                                }
+                                <td><button onClick={()=>fnView(val)}>View</button></td>
+                            </tr>
+                                
+                        })
+                    }
+                
+                </tbody>
+
+            </table>
+            <table border='2px'>
+                <tbody>
+                        
+                           { 
+                                Object.keys(obj1).map((v,i)=>
+                                {
+                                    return <tr>
+                                        <td>{v}</td>
+                                        <td>{obj1[v]}</td>
+                                        </tr>
+                                })
+                            }
+                        
+                </tbody>
+                </table>
+                </div>
+
+    }
+
+    
+
+    const App = () => {
+        const students = [
+            { name: 'Dip', marks: '90', city: 'Chalisgaon' },
+            { name: 'Nitin', marks: '92', city: 'Shirpur' },
+            { name: 'Vivek', marks: '100', city: 'Amalner' }
+        ]
+        const teachers=[{name:'Gauresh Sir',location:'Nashik'},
+                        {name:'Sunil Sir',location:'Nashik'}]
+
+        const studentsHead=['name','marks','city']
+        const teachersCol=['name','location']
+        const studentsCol=['name','marks','city']
+        const teachersHead=['name','location']
+        
+        return <div>
+            <h2>Students</h2>
+            <Table heading={studentsHead} data={students} colId={studentsCol} />
+            <h2>Teachers</h2>
+            <Table heading={teachersHead} data={teachers} colId={teachersCol} />
+        </div>
+    }
+    var ref = ReactDOM.createRoot(document.querySelector('#tbl'))
+    ref.render(<App/>)
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating </title>
+        <script src="react.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script src="react-dom.development.js"></script>
+</head>
+<body>
+    <div class="root"> </div>
+
+<script type="text/babel">
+   const A=()=>{
+    React.useEffect(()=>
+        {
+            console.log('mounting...!!')
+        },[])
+    React.useEffect(()=>
+        {
+            debugger;
+            console.log('Unmounting...!!')
+            
+           
+        },[name])
+        return <h2>Dip</h2>
+   }
+    
+   
+   const App=()=>
+    {
+        const[isShow,setIsShow]=React.useState(true)
+        const fnHide=()=>
+        {
+            setIsShow(!isShow)
+        }
+
+       
+        debugger;
+        console.log('Before Mounting...!!')
+        return <div>
+                    {isShow && <A/>}
+                    <button onClick={fnHide}>Hide</button>
+                </div>
+    }
+    var data=ReactDOM.createRoot(document.querySelector('.root'))
+    data.render(<App/>)
+</script>
+    
+</body>
+</html>

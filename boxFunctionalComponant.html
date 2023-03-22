@@ -1,0 +1,40 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="bx"></div>
+<style>
+  .box{
+    height: 200px;
+    width: 200px;
+    border: 2px solid red;
+    display: inline-block;
+    text-align: center;
+    line-height: 200px;
+
+  }  
+</style>
+<script type="text/babel">
+    function Box(x)
+    {
+        return <div class="box">
+                  {x.no}
+               </div>
+    }
+
+    function App(){
+        return <div>
+                    <div>
+                        <Box no='1'/>
+                        <Box no='2'/>
+                    </div>
+                    <div>
+                        <Box no='3'/>
+                        <Box no='4'/>
+                    </div> 
+               </div> 
+    }
+    var ref=ReactDOM.createRoot(document.querySelector('#bx'))
+    ref.render(<App/>)
+
+</script>

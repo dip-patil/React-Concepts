@@ -1,0 +1,36 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+
+<div id="throttling"></div>
+
+<script type="text/babel">
+    const App=()=>
+    {
+        return <div>
+            <h2>Search : </h2>
+            <input onKeyUp={throttling}/>
+            </div>
+            
+    }
+    var timer;
+    var flag=true;
+    const throttling=()=>
+    {
+        if(flag){
+            search();
+            flag=false;
+        }
+        clearTimeout(timer)
+        timer=setTimeout(function(){search()},1000)
+    }
+    const search=()=>
+    {
+       console.log('Dip request...') 
+    }
+    
+    var ref = ReactDOM.createRoot(document.querySelector('#throttling'))
+    ref.render(<App/>)
+</script>

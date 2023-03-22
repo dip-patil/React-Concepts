@@ -1,0 +1,42 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+
+<div id="tbl"></div>
+
+<script type="text/babel">
+    const FnGetData = (obj) => {
+        const { data,children } = obj
+        return <div>
+            <h2>{children} </h2>
+            <ul>
+                {
+
+                    data.map((val, index) => {
+                        return <li key={index}>{val}</li>
+                    })
+                }
+            </ul>
+        </div>
+
+    }
+
+    const App = () => {
+        const Players = ['Rohit', 'Dhoni', 'Kolhi']
+        const Students = ['Dip', 'Nitin', 'Vivek']
+        const Teachers = ['Sunil Sir', 'Gauresh Sir']
+
+
+
+        return <div>
+            <FnGetData data={Players}>Players</FnGetData>
+            <FnGetData data={Students}>Students</FnGetData>
+            <FnGetData data={Teachers}>Teachers</FnGetData>
+
+        </div>
+    }
+    var ref = ReactDOM.createRoot(document.querySelector('#tbl'))
+    ref.render(<App />)
+</script>

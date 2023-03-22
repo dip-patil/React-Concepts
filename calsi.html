@@ -1,0 +1,136 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+
+<div id="bx"></div>
+<style>
+  .Calsi{
+    width : 380px;
+    height:550px;
+    background-color: rgb(79, 79, 80);
+    border: 2px solid whitesmoke;
+    border-radius: 13px;
+    display: inline-block;
+    text-align: center;
+    line-height: 200px;
+
+  } 
+  .Screen{
+    margin-top: 29px;
+    margin-bottom: 16px;
+    background-color: rgb(101, 166, 103);
+    width : 312px;
+    height:94px;
+    border: 2px solid rgb(60, 59, 59);
+    display: inline-block;
+    text-align: right;
+    line-height: 150px;
+    font-size: 30px;
+
+  }  
+  .btn{
+    width : 68px;
+    height:48px;
+    margin: 4px;
+    background-color: white;
+    border: 2px solid rgb(60, 59, 59);
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-size: large;
+  }
+  .clrbtn{
+    margin-left: 245px;
+    border-radius: 4px;
+  }
+  .Spacing{
+    padding: 17px;
+  }
+</style>
+
+
+<script type="text/babel">
+  var a=''
+  var num=[]
+  var ans;
+
+    function Button(x){
+         return <button type='submit' onClick={()=>send(x.value)}class="btn">{x.value}</button>
+    }
+    function Equal(x){
+         return <button type='submit' onClick={equal} class="btn">{x.value}</button>
+    }
+    function ClrButton(x){
+      return <button type='submit' onClick={clear} class="clrbtn">{x.value}</button>
+    }
+    function Calsi()
+    {
+        return <div class="Calsi">
+                  <input type='text' class="Screen"/>
+
+                    
+                  
+                  <div>
+                    <ClrButton value="CLR"/>
+                  
+                    <div class="Spacing">
+                        <Button value="1"/>
+                        <Button value="2"/>
+                        <Button value="3"/>
+                        <Button value="/"/>
+                    </div>
+                    <div class="Spacing">
+                        <Button value="4"/>
+                        <Button value="5"/>
+                        <Button value="6"/>
+                        <Button value="*"/>
+                    </div>
+                    <div class="Spacing">
+                        <Button value="7"/>
+                        <Button value="8"/>
+                        <Button value="9"/>
+                        <Button value="-"/>
+                    </div>
+                    <div class="Spacing">
+                        <Button value="."/>
+                        <Button value="0"/>
+                        <Button value="+"/>
+                        <Equal value="="/>
+                    </div>
+                    </div>
+               </div>
+    }
+    function send(digit){
+       num.push(digit)
+       a='';
+       for(var i=0;i<num.length;i++)
+       {
+        a=a+num[i]
+       }
+       document.querySelector('.Screen').value=a
+    }
+    function clear(){
+      a='';
+      num=[];
+      ans="";
+      document.querySelector('.Screen').value=[]
+      
+    }
+    function equal(){
+    var ans=eval(a)
+    document.querySelector('.Screen').value=ans;
+    num.push(ans)
+    }
+
+    function App(){
+        return <div>
+                       <Calsi/>
+             </div> 
+    }
+    var ref=ReactDOM.createRoot(document.querySelector('#bx'))
+    ref.render(<App/>)
+
+</script>

@@ -1,0 +1,39 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    class HelloPrint extends React.Component
+    {
+        render()
+        {
+            return <h1>Hello World...!!</h1>
+        }
+    }
+    class Batsman extends React.Component
+    {
+        render()
+        {
+            return <h1>Hi,This is {this.props.name},I am from {this.props.place}.</h1>
+        }
+    }
+    class App extends React.Component
+    {
+        render()
+        {
+            return <div>
+                    <HelloPrint/>
+                    <Batsman name="Sachin" place="Mumbai"/>
+                    <Batsman name="Dhoni" place="Ranchi"/>
+                    <Batsman name="Kolhi" place="Delhi"/>
+                    
+                </div>
+        }
+    }
+
+    var instance=ReactDOM.createRoot(document.getElementById('root'))
+    instance.render(<App/>)
+
+</script>

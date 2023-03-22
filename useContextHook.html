@@ -1,0 +1,80 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.min.js"></script>
+<html>
+<body>
+<div id="con"></div>
+</body>
+
+
+<script type="text/babel">
+ 
+ const context=React.createContext()
+
+ const A=()=>
+ {
+    return <div>
+        <h1>A</h1>
+        <B/>
+        </div>
+
+
+ }
+
+ const B=()=>
+ {
+    return <div>
+        <h1>B</h1>
+        <C/>
+        <D/>
+        </div>
+ }
+ const C=()=>
+ {  
+    const cntxData=React.useContext(context)
+    return <div>
+        <h1>C</h1>
+        {
+            cntxData.map((v)=>
+            {
+                return <h2>{v}</h2>
+            })
+        }
+        <E/>
+        </div>
+ }
+ const D=()=>
+ {
+    const cntxData=React.useContext(context)
+    return <div>
+        <h1>D : {cntxData[1]}</h1>
+        
+        </div>
+
+ }
+ const E=()=>
+ {
+    const cntxData=React.useContext(context)
+    return <div>E : {cntxData[0]}</div>
+
+ }
+ 
+ const App=()=>
+ {
+    const[name]=React.useState(['Dip','Nitin','Vinay'])
+    
+    return <div>
+            <h1>App :</h1>
+            <context.Provider value={name}>
+                <A/>
+            </context.Provider>
+        </div>
+ }
+
+
+var instance=ReactDOM.createRoot(document.getElementById('con'))
+instance.render(<App/>)
+
+</script>
+
+</html>

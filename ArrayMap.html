@@ -1,0 +1,47 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Addition</title>
+  </head>
+  <body>
+    <div id="dropdown"></div>
+
+    <script type="text/babel">
+    
+        const App=()=>{
+            const arr=['Rohit','Dhoni','Kolhi']
+            return <div>
+                        <h2>Players</h2> 
+                        <select>
+                        {
+                          arr.map((val,index)=>{
+                                return <option>{val}</option>
+                          })  
+                        }
+                        </select>
+                        <h2>Players UL</h2> 
+                        <ul>
+                        {
+                          arr.map((val,index)=>{
+                                return <li>{val}</li>
+                          })  
+                        }
+                        </ul>
+                    </div>
+        }
+    var ref=ReactDOM.createRoot(document.querySelector('#dropdown'))
+        ref.render(<App/>)
+    </script>

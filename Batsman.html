@@ -1,0 +1,23 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="axios.min.js"></script>
+
+<div class="bn"> </div>
+
+<script type="text/babel">
+    function Batsman(x){
+        return <h1>Hi,This is {x.name},I am from {x.place}.</h1> 
+    }
+    function App()
+    {
+        return <div>
+                    <Batsman name="Sachin" place="Mumbai"/>
+                    <Batsman name="Dhoni" place="Ranchi"/>
+                    <Batsman name="Kolhi" place="Delhi"/>
+                    
+                </div>
+    }
+    var data=ReactDOM.createRoot(document.querySelector('.bn'))
+    data.render(<App/>)
+</script>

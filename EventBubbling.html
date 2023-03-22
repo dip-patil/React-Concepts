@@ -1,0 +1,25 @@
+<style>
+    div {
+        padding: 30px;
+        border: 2px solid orange;
+    }
+</style>
+<div onclick="alert('Div 1')">
+    <h3>Div 1</h3>
+    <div onclick="alert('Div 2')">
+        <h3>Div 2</h3>
+        <div onclick="fnClick(event)">
+            <h3>Div 3</h3>
+        </div>
+    </div>
+
+</div>
+<script>
+
+function fnClick(x)
+{
+    x.stopPropagation()
+    alert('Div 3')
+}
+   
+</script>

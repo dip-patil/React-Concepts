@@ -1,0 +1,56 @@
+.title{
+    text-align: center;
+    background: aquamarine;
+    
+}
+
+.footer{
+    text-align: center;
+    background: aquamarine;
+    position:fixed; 
+    bottom: 0px;
+    width: 100%;
+}
+.menu-btn{
+    position: absolute;
+    right:10px;
+}
+.menu{
+    margin:0;
+    text-align: right;
+    color:black;
+    background: rgb(167, 218, 232);
+    line-height: 40px;
+}
+.menu>a
+{
+    margin-right: 15px;
+    letter-spacing: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    
+    color:rgb(255, 255, 255);
+}
+.mobile-menu
+{   margin-top: 40px;
+    width:130px;
+    display:inline-block;
+    text-align: left;
+    padding: 10px;
+    position: absolute;
+    transition: left 1s;
+    background: rgb(161, 216, 233);
+    line-height: 40px;
+    top: 70px;
+}
+
+.mobile-menu>a
+{
+    display:block;
+    margin-right:15px;
+    font-size:20px;
+    letter-spacing: 4px;
+    font-weight:bold;
+
+
+}
